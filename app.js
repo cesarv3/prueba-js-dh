@@ -40,13 +40,13 @@ exports.filtrarTareasPorEstado = function (estado) {
         En esta función debes de leer las tareas y retornar las que tengan el estado que se
         manda en el parametro.
     */ //let propiedad = estado;
-    let propiedad = estado;
+    
         let listado = fs.readFileSync('./tareas.json', 'utf-8');
         let listadoArray = [];
         listadoArray = JSON.parse(listado);
         console.log('Filter' + listadoArray);
-        let nuevo = listadoArray.filter((estado) => {
-            return listadoArray.estado === propiedad;
+        let nuevo = listadoArray.filter((obj) => {
+            return obj.status === estado;
         });
         return nuevo;
 
